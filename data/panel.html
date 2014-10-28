@@ -1,0 +1,19 @@
+<html>
+        <body>
+                Select File: <br/>
+                <button onclick="Panel.selectFile();" value="Select">Select</button>
+                <span id="inputPath"></span><br/><br/>
+
+                Select folder to save compressed(.gmlz) file:<br/> 
+                <button onclick="Panel.selectFolder('gmlz');">Browse</button>
+                <span id="gmlzPath"></span><br/><br/>
+
+                Select folder to save image(.svg) file:<br/> 
+                <button onclick="Panel.selectFolder('svg');">Browse</button>
+                <span id="svgPath"></span><br/><br>
+                
+                <button onclick="Panel.close();">Submit</button>
+
+                <script src="panel.js"></script>
+        </body>
+</html>
