@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://dev.openlayers.org/examples/gml-layer.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <title>OpenLayers GML Layer Example</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style(1).css" type="text/css">
+    <script src="OpenLayers.js"></script>
+    <!--script type="text/javascript">
+        var map, layer;
+
+        function init(){
+            map = new OpenLayers.Map('map');
+            layer = new OpenLayers.Layer.WMS( "OpenLayers WMS",
+                    "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'} );
+            map.addLayer(layer);
+            map.zoomToExtent(new OpenLayers.Bounds(-3.922119,44.335327,4.866943,49.553833));
+/*            map.addLayer(new OpenLayers.Layer.Vector("GML", {
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "andhra.xml",
+                    format: new OpenLayers.Format.GML()
+                }),
+                strategies: [new OpenLayers.Strategy.Fixed()]
+            }));*/  
+            var polygonLayer = new OpenLayers.Layer.Vector("Polygon Layer");
+
+            var points = [
+                new OpenLayers.Geometry.Point(0, 0),
+                new OpenLayers.Geometry.Point(0, 100),
+                new OpenLayers.Geometry.Point(100, 100),
+                new OpenLayers.Geometry.Point(100, 0)
+            ];
+            var ring = new OpenLayers.Geometry.LinearRing(points);
+            var polygon = new OpenLayers.Geometry.Polygon([ring]);
+
+            // create some attributes for the feature
+            var attributes = {name: "my name", bar: "foo"};
+
+            var feature = new OpenLayers.Feature.Vector(polygon, attributes);
+         //   var layer = new OpenLayers.Layer.Vector("Test");
+            polygonLayer.addFeatures([feature]);
+            map.addLayer(polygonLayer);
+        }
+    </script-->
+  <style type="text/css"></style></head>
+  <body>
+      <h1 id="title">GML Layer Example</h1>
+      <input type="file" id="gmlzFile"/>
+      <div id="tags">
+        GML
+      </div>
+
+    <script src="datastore.js"></script>
+    <div id="map" class="smallmap olMap"></div>
+    <script src="gmlz.js"></script>
+
+    </body>
+</html>
